@@ -38,4 +38,27 @@ class Usuarios_Repositori
             return $response->withStatus(404)->withHeader("Content-Type", "application/json");
         }
     }
+
+    public function register(Request $request, Response $response, $args): Response
+    {
+        $controller = new Usuarios_Controller();
+        $data = json_decode($request->getBody(), true);
+        $nombre = $data['nombre'] ?? '';
+        $email = $data['email'] ?? '';
+        $password = $data['password'] ?? '';
+
+        try {
+            $user = $controller->register($nombre, $email, $password);
+            if ($user) {
+                $response->getBody()->write(json_encode(['message' => 'User registered successfully', 'user' => $user]));
+                return $response->withHeader("Content-Type", "application/json");
+            } else {
+                $response->getBody()->write(json_encode(['message' => 'Registration failed']));
+                return $response->withStatus(400)->withHeader("Content-Type", "application/json");
+            }
+        } catch (\Exception $e) {
+            $response->getBody()->write(json_encode(['message' => 'Error: ' . $e->getMessage()]));
+            return $response->withStatus(500)->withHeader("Content-Type", "application/json");
+        }
+    }
 }
