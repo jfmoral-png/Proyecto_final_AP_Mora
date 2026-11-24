@@ -4,17 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
     protected $table = 'usuarios';
-    public $timestamps = false;
     protected $fillable = [
         'nombre',
-        'email',
-        'password',
+        'correo',
+        'usuario',
+        'contrasena',
+        'rol',
+        'token',
+        'sesion_activa',
+        'estado',
+        'created_at',
+        'updated_at',
     ];
 
     protected $hidden = [
-        'password',
+        'contrasena',
+        'token',
     ];
 }
