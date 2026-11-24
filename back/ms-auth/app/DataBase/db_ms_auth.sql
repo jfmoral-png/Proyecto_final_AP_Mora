@@ -1,4 +1,4 @@
-CREATE TABLE usuarios (
+CREATE TABLE usuarios if not exists (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     correo VARCHAR(150) NOT NULL UNIQUE,
