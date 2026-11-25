@@ -7,7 +7,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver'    => 'mysql', 
     'host'      => '127.0.0.1', //cambiar por la db a usar
-    'database'  => 'mi_base',
+    'database'  => 'db_ms_conductores',
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',

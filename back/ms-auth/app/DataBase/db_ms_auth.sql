@@ -1,4 +1,7 @@
-CREATE TABLE usuarios if not exists (
+CREATE DATABASE IF NOT EXISTS db_ms_auth;
+USE db_ms_auth;
+
+CREATE TABLE usuarios (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     correo VARCHAR(150) NOT NULL UNIQUE,
