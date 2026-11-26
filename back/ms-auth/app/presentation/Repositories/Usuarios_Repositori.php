@@ -2,7 +2,7 @@
 
 namespace App\Presentation\Repositori;
 
-use App\Controller\Usuario_controller;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
